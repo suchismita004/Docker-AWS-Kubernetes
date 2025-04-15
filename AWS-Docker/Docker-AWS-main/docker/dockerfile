@@ -1,0 +1,12 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY . /app
+
+# Install any needed dependencies
+RUN pip install --no-cache-dir -r requirememts.txt
+EXPOSE  8080
+
+# Run web_scraper.py when the container launches
+CMD ["python", "scrapper.py"]
